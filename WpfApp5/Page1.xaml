@@ -1,0 +1,82 @@
+﻿<Page x:Class="WpfApp5.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Page 1">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
+            <TextBlock Text="Dane klienta" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Nazwisko:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxNazwisko" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Imię:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxImie" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Pesel:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxPesel" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Wiek:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxWiek" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Nr prawa jazdy:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxNrPrawaJazdy" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Ulica:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxUlica" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Nr mieszkania:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxNrMieszkania" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Kod pocztowy:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxKodPocztowy" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Telefon:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxTelefon" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Button Content="Dodaj" Width="80" Margin="0,0,10,0" Click="ButtonAdd_Click"/>
+                <Button Content="Edytuj" Width="80" Margin="0,0,10,0" Click="ButtonUpdate_Click"/>
+                <Button Content="Usuń" Width="80" Click="ButtonDelete_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <DataGrid x:Name="DataGridKlienci" Grid.Row="1" AutoGenerateColumns="False" Margin="10"
+                  SelectionChanged="DataGridKlienci_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Klienta" Binding="{Binding IDKlienta}"/>
+                <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}"/>
+                <DataGridTextColumn Header="Imię" Binding="{Binding Imie}"/>
+                <DataGridTextColumn Header="Pesel" Binding="{Binding Pesel}"/>
+                <DataGridTextColumn Header="Wiek" Binding="{Binding Wiek}"/>
+                <DataGridTextColumn Header="Nr Prawa Jazdy" Binding="{Binding Nr_PrawaJazdy}"/>
+                <DataGridTextColumn Header="Ulica" Binding="{Binding Ulica}"/>
+                <DataGridTextColumn Header="Nr mieszkania" Binding="{Binding Nr_mieszkania}"/>
+                <DataGridTextColumn Header="Kod Pocztowy" Binding="{Binding Kod_Pocztowy}"/>
+                <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

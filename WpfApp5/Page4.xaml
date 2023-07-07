@@ -1,0 +1,68 @@
+﻿<Page x:Class="WpfApp5.Page4"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp5"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page4">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Margin="10">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="ID Wypożyczenia:" Width="120" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxIDWypozyczenia" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="ID Klienta:" Width="120" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxIDKlienta" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="ID Samochodu:" Width="120" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxIDSamochodu" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Kod Pracownika:" Width="120" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxKodPracownika" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Data wypożyczenia:" Width="120" VerticalAlignment="Center"/>
+                <DatePicker x:Name="DatePickerDataWypozyczenia" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Data zwrotu:" Width="120" VerticalAlignment="Center"/>
+                <DatePicker x:Name="DatePickerDataZwrotu" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Dodaj" Click="ButtonAdd_Click"/>
+                <Button Content="Edytuj" Click="ButtonUpdate_Click"/>
+                <Button Content="Usuń" Click="ButtonDelete_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <DataGrid x:Name="DataGridWypozyczenia" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False"
+                  SelectionChanged="DataGridWypozyczenia_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Wypożyczenia" Binding="{Binding IDWypozyczenia}"/>
+                <DataGridTextColumn Header="ID Klienta" Binding="{Binding IDKlienta}"/>
+                <DataGridTextColumn Header="ID Samochodu" Binding="{Binding ID_Samochodu}"/>
+                <DataGridTextColumn Header="Kod Pracownika" Binding="{Binding KodPracownika}"/>
+                <DataGridTextColumn Header="Data wypożyczenia" Binding="{Binding Data_Wypozyczenia, StringFormat='yyyy-MM-dd'}"/>
+                <DataGridTextColumn Header="Data zwrotu" Binding="{Binding Data_Zwrotu, StringFormat='yyyy-MM-dd'}"/>
+                <DataGridTextColumn Header="Długość wypożyczenia" Binding="{Binding Długość_wypozyczenia}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

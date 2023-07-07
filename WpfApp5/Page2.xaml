@@ -1,0 +1,100 @@
+﻿<Page x:Class="WpfApp5.Page2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp5"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page2">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Margin="10">
+            <TextBlock Text="Dane pojazdu" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="VIN:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxVin" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Rejestracja:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxRejestracja" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Marka:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxMarka" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Model:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxModel" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Rok produkcji:" Width="100" VerticalAlignment="Center"/>
+                <DatePicker x:Name="DatePickerRokProdukcji" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Wersja silnika:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxWersjaSilnika" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Moc:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxMoc" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Wersja wyposażenia:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxWersjaWyposazenia" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Numer transpondera GPS:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxNumerTransponderaGPS" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Rodzaj nadwozia:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxRodzajNadwozia" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Stawka:" Width="100" VerticalAlignment="Center"/>
+                <TextBox x:Name="TextBoxStawka" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Button Content="Dodaj" Width="80" Margin="0,0,10,0" Click="ButtonAdd_Click"/>
+                <Button Content="Edytuj" Width="80" Margin="0,0,10,0" Click="ButtonUpdate_Click"/>
+                <Button Content="Usuń" Width="80" Click="ButtonDelete_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <DataGrid x:Name="DataGridPojazdy" Grid.Row="1" AutoGenerateColumns="False" Margin="10"
+                  SelectionChanged="DataGridPojazdy_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Samochodu" Binding="{Binding ID_Samochodu}"/>
+                <DataGridTextColumn Header="Vin" Binding="{Binding Vin}"/>
+                <DataGridTextColumn Header="Rejestracja" Binding="{Binding Rejestracja}"/>
+                <DataGridTextColumn Header="Marka" Binding="{Binding Marka}"/>
+                <DataGridTextColumn Header="Model" Binding="{Binding Model}"/>
+                <DataGridTextColumn Header="Rok Produkcji" Binding="{Binding Rok_Produkcji}"/>
+                <DataGridTextColumn Header="Wersja Silnika" Binding="{Binding Wersja_Silnika}"/>
+                <DataGridTextColumn Header="Moc" Binding="{Binding Moc}"/>
+                <DataGridTextColumn Header="Wersja Wyposażenia" Binding="{Binding Wersja_Wyposazenia}"/>
+                <DataGridTextColumn Header="Numer Transpondera GPS" Binding="{Binding Numer_Transpondera_GPS}"/>
+                <DataGridTextColumn Header="Rodzaj Nadwozia" Binding="{Binding Rodzaj_Nadwozia}"/>
+                <DataGridTextColumn Header="Stawka" Binding="{Binding Stawka}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
